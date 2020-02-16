@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon src/index.ts",
     "prod": "ts-node src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -r ts-node/register tests/**/*.spec.ts"
   },
   "repository": {
     "type": "git",
@@ -23,11 +23,12 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "@types/mocha": "^7.0.1",
+    "@types/node": "^13.5.0",
     "chai": "^4.2.0",
-    "eslint": "^6.8.0",
+    "typescript": "^3.7.5",
     "mocha": "^7.0.1",
     "ts-node": "^8.6.2",
-    "@types/node": "^13.5.0",
     "nodemon": "^2.0.2",
     "reload": "^3.0.4"
   }
