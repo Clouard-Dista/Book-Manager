@@ -1,0 +1,23 @@
+{
+  "name": "Book-Manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Clouard-Dista/Book-Manager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Clouard-Dista/Book-Manager/issues"
+  },
+  "homepage": "https://github.com/Clouard-Dista/Book-Manager#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
