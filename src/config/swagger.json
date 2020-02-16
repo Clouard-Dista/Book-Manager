@@ -1,0 +1,21 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Book-Manager",
+        "description": "Gestion de bibliothèque",
+        "version": "1.0"
+    },
+    "produces": ["application/json"],
+    "paths": {
+        "/test": {
+            "get": {
+                "x-swagger-router-controller": "test",
+                "operationId": "impossible",
+                "tags": ["/test"],
+                "description": "",
+                "parameters": [],
+                "responses": {}
+            }
+        }
+    }
+}
