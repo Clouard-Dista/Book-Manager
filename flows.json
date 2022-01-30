@@ -8,6 +8,143 @@
         "env": []
     },
     {
+        "id": "a6d844e59ce39ffa",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "e8222a54024cf0c2",
+        "type": "ui_tab",
+        "name": "Tab 1",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "f9eb58ac811c0496",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "e8222a54024cf0c2",
+        "order": 1,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "cf47e83efd8f3c41",
+        "type": "postgreSQLConfig",
+        "name": "",
+        "host": "192.168.1.50",
+        "hostFieldType": "str",
+        "port": "5433",
+        "portFieldType": "num",
+        "database": "postgres",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "max": "10",
+        "maxFieldType": "num",
+        "min": "1",
+        "minFieldType": "num",
+        "idle": "1000",
+        "idleFieldType": "num",
+        "connectionTimeout": "10000",
+        "connectionTimeoutFieldType": "num",
+        "user": "pgadmin",
+        "userFieldType": "str",
+        "password": "pgadmin",
+        "passwordFieldType": "str"
+    },
+    {
         "id": "2f4976c76fad0b1d",
         "type": "inject",
         "z": "e27f097208312a05",
@@ -28,8 +165,336 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 250,
+        "x": 160,
         "y": 100,
+        "wires": [
+            [
+                "e38fb274b63a4f2e"
+            ]
+        ]
+    },
+    {
+        "id": "cc1a5b32cce4e2c1",
+        "type": "ui_button",
+        "z": "e27f097208312a05",
+        "name": "",
+        "group": "f9eb58ac811c0496",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "button",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 130,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6d5cda5598bf69ee",
+        "type": "postgresql",
+        "z": "e27f097208312a05",
+        "name": "",
+        "query": "SELECT * FROM ;",
+        "postgreSQLConfig": "cf47e83efd8f3c41",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 410,
+        "y": 160,
+        "wires": [
+            [
+                "4fb90c735fa02794"
+            ]
+        ]
+    },
+    {
+        "id": "4fb90c735fa02794",
+        "type": "debug",
+        "z": "e27f097208312a05",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "e38fb274b63a4f2e",
+        "type": "function",
+        "z": "e27f097208312a05",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 100,
+        "wires": [
+            [
+                "6d5cda5598bf69ee",
+                "58af25777027eede"
+            ]
+        ]
+    },
+    {
+        "id": "58af25777027eede",
+        "type": "debug",
+        "z": "e27f097208312a05",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "37b96db16c91a983",
+        "type": "function",
+        "z": "e27f097208312a05",
+        "name": "",
+        "func": "let key = global.get(\"googleApi\");\nmsg.url  = \"https://www.googleapis.com/books/v1/volumes?q=isbn:9782706118586&key=\"+key\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 240,
+        "wires": [
+            [
+                "fe8e9f2f0d554f5f"
+            ]
+        ]
+    },
+    {
+        "id": "3112572d154ae750",
+        "type": "inject",
+        "z": "e27f097208312a05",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 240,
+        "wires": [
+            [
+                "37b96db16c91a983"
+            ]
+        ]
+    },
+    {
+        "id": "fe8e9f2f0d554f5f",
+        "type": "http request",
+        "z": "e27f097208312a05",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 480,
+        "y": 240,
+        "wires": [
+            [
+                "46475b376450197d"
+            ]
+        ]
+    },
+    {
+        "id": "791239fbd001787a",
+        "type": "debug",
+        "z": "e27f097208312a05",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "46475b376450197d",
+        "type": "function",
+        "z": "e27f097208312a05",
+        "name": "",
+        "func": "msg.payload= JSON.parse(msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 240,
+        "wires": [
+            [
+                "791239fbd001787a"
+            ]
+        ]
+    },
+    {
+        "id": "7322fea619025ba6",
+        "type": "ui_webcam",
+        "z": "e27f097208312a05",
+        "name": "",
+        "group": "f9eb58ac811c0496",
+        "order": 1,
+        "width": 0,
+        "height": 5,
+        "countdown": false,
+        "autoStart": false,
+        "hideCaptureButton": false,
+        "showImage": "2",
+        "mirror": true,
+        "format": "png",
+        "x": 140,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0b516c22670d07fe",
+        "type": "function",
+        "z": "e27f097208312a05",
+        "name": "Request get config",
+        "func": "msg.query=\"SELECT * FROM public.config\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 560,
+        "wires": [
+            [
+                "e7562a525131ccdf"
+            ]
+        ]
+    },
+    {
+        "id": "e7562a525131ccdf",
+        "type": "postgresql",
+        "z": "e27f097208312a05",
+        "name": "",
+        "query": "SELECT * FROM ;",
+        "postgreSQLConfig": "cf47e83efd8f3c41",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 550,
+        "y": 560,
+        "wires": [
+            [
+                "de0ac3c2e1db1fe7",
+                "fe3e87e597c665f5"
+            ]
+        ]
+    },
+    {
+        "id": "de0ac3c2e1db1fe7",
+        "type": "debug",
+        "z": "e27f097208312a05",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "8462b650096ea552",
+        "type": "inject",
+        "z": "e27f097208312a05",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 560,
+        "wires": [
+            [
+                "0b516c22670d07fe"
+            ]
+        ]
+    },
+    {
+        "id": "fe3e87e597c665f5",
+        "type": "function",
+        "z": "e27f097208312a05",
+        "name": "Set global config",
+        "func": "msg.payload.forEach(e => {\n    global.set(e.conf_name.trim(),e.conf_value.trim())\n});\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 560,
         "wires": [
             []
         ]
